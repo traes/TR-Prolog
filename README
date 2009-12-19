@@ -1,0 +1,54 @@
+TR-Prolog (c) Thomas Raes 2007
+==============================
+
+TR-Prolog is an open-source interpreter for a fuzzy variant of Prolog.
+For comments and/or remarks, you can contact me at Thomas.E.M.Raes@gmail.com
+
+License
+-------
+
+The code is released under the GPL v2.
+
+Compilation
+-----------
+
+cmake . && make
+
+Usage
+-----
+
+start the program (./tr-prolog) and type 'help' (without the quotes)
+
+Example
+-------
+
+# ./tr-prolog
+TR-Prolog v1.4 (c) 2006-2007 Thomas Raes
+*> load
+enter filename:demo.pl
+*> show
+<0.6320; a(foo).>
+<1.0000; b(bar).>
+<0.7000; c(X,Y) :- a(X),b(Y).>
+*> query
+enter query: c(X,Y).
+*** match found ***
+fuzzy value: 0.7
+variable bindings:
+    {
+	X => foo,
+    	Y => bar
+    }
+*> stop
+Bye!
+
+Versions
+--------
+
+v1.4 bugfix  
+v1.3 bugfix
+v1.2 improved variable binding representation 
+v1.1 added tracing
+v1.0 added fuzzy evaluation
+v0.2 added fuzzy clauses
+v0.1 initial version
